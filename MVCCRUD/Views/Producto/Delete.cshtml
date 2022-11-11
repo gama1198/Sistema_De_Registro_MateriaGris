@@ -1,0 +1,33 @@
+﻿@model MVCCRUD.Models.Producto
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Eliminar Producto</h3>
+<div>
+ 
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IdSubProducto)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdSubProducto)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NombreProducto)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NombreProducto)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IdProducto" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a class="btn btn-outline-dark" asp-action="Index"><i class="fa-solid fa-arrow-right-from-bracket"></i>Volver hacia atras</a>
+    </form>
+</div>

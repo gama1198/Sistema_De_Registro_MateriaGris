@@ -1,0 +1,56 @@
+﻿@model MVCCRUD.Models.SubProducto
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<script src="https://kit.fontawesome.com/7b4311b411.js" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+<h1>Create</h1>
+
+<h4>SubProducto</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="IdSubProducto" class="control-label"></label>
+                <input asp-for="IdSubProducto" class="form-control" />
+                <span asp-validation-for="IdSubProducto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdStock" class="control-label"></label>
+                <input asp-for="IdStock" class="form-control" />
+                <span asp-validation-for="IdStock" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdProducto" class="control-label"></label>
+                <select asp-for="IdProducto" class ="form-control" asp-items="ViewBag.IdProducto"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="NombreSubProducto" class="control-label"></label>
+                <input asp-for="NombreSubProducto" class="form-control" />
+                <span asp-validation-for="NombreSubProducto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DescripcionSubProducto" class="control-label"></label>
+                <input asp-for="DescripcionSubProducto" class="form-control" />
+                <span asp-validation-for="DescripcionSubProducto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <button type="submit" value="Create" class="btn btn-outline-success"><i class="fa-solid fa-circle-plus"></i> Agregar</button>
+                <a class="btn btn-outline-dark" asp-action="Index"><i class="fa-solid fa-arrow-right-from-bracket"></i> Volver hacia atras</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

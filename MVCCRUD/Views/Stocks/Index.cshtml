@@ -1,0 +1,59 @@
+﻿@model IEnumerable<MVCCRUD.Models.Stock>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ValorCosto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValorVenta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CantidadStock)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdFacturaNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdSubProductoNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValorCosto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValorVenta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CantidadStock)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdFacturaNavigation.IdFactura)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdSubProductoNavigation.IdSubProducto)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdStock">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdStock">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdStock">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

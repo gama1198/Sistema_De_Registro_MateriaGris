@@ -1,0 +1,56 @@
+﻿@model MVCCRUD.Models.Proveedore
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<script src="https://kit.fontawesome.com/7b4311b411.js" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<h1>Create</h1>
+
+<h4>Agregar Proveedor</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="IdProveedores" class="control-label"></label>
+                <input asp-for="IdProveedores" class="form-control" />
+                <span asp-validation-for="IdProveedores" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdFactura" class="control-label"></label>
+                <input asp-for="IdFactura" class="form-control" />
+                <span asp-validation-for="IdFactura" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NombreProveedor" class="control-label"></label>
+                <input asp-for="NombreProveedor" class="form-control" />
+                <span asp-validation-for="NombreProveedor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RutProveedor" class="control-label"></label>
+                <input asp-for="RutProveedor" class="form-control" />
+                <span asp-validation-for="RutProveedor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FonoProveedor" class="control-label"></label>
+                <input asp-for="FonoProveedor" class="form-control" />
+                <span asp-validation-for="FonoProveedor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <button type="submit" value="Create" class="btn btn-outline-success"><i class="fa-solid fa-circle-plus"></i> Agregar</button>
+                <a class="btn btn-outline-dark" asp-action="Index"><i class="fa-solid fa-arrow-right-from-bracket"></i> Volver hacia atras</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
